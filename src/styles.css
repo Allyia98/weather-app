@@ -1,0 +1,78 @@
+body {
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+}
+form {
+  top: 0;
+}
+button {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  padding: 5px 10px;
+  background: #f8de54;
+  border: 0.5px solid #f8de54;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px gray;
+  background: transparant;
+  transition: all 200ms ease-in-out;
+}
+
+h1 {
+  font-size: 50px;
+  padding: 0 auto;
+}
+
+footer {
+  font-family: "Roboto Slab", serif;
+  padding: 100px 10px 10px;
+}
+
+.high-low {
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  top: 200px;
+  padding: 0px 100px 150px;
+}
+
+.current-weather {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 400px;
+  max-width: 600px;
+  opacity: 0.6;
+}
+
+.header {
+  text-align: center;
+  padding: 50px 0px 0px 0px;
+}
+
+.temperature {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.row {
+  margin: 0px 10px;
+  padding: 20px 10px;
+  border: thick double #32a1ce;
+}
+
+.col {
+  text-align: center;
+}
+
+.weather-forecast {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.rounded-circle {
+  max-width: 50px;
+}
+
+.date {
+  font-family: "Roboto Slab", serif;
+}
