@@ -1,16 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      h1 {
-        color: blue;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Git</h1>
-  </body>
+<html>
+
+<head>
+  <title>Homework 5</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <link rel="stylesheet" href="src/styles.css" />
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://kit.fontawesome.com/422c3c74e2.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <img src="images/raining.png" alt="raining" class=current-weather>
+  <div class="container">
+    <form id="search-form">
+      <input type="text" placeholder="Enter your city" autocmoplete="off" autofocus="on" id="city-input" />
+
+      <input type="submit" value="🔎" />
+    </form>
+
+    <button> Current Location</button>
+
+
+    <p class="high-low">
+      <span id="high-temp">High: 15°</span>
+      <br />
+      <span id="low-temp"> Low: 10°</span>
+    </p>
+
+    <!-- <p class="units">
+  <a href="#" id="celcius-link"> °C </a>
+  <a href="#" id="fahrenheit-link"> °F </a>
+</p> -->
+
+    <section class="header">
+      <h2 id="current-city">Toronto</h2>
+      <p id="date">Saturday, October 10</p>
+    </section>
+
+    <section class="temperature">
+      <h1 id="curr-temp"> 12°</h1>
+      <small>
+        <span id="temp-description">Raining</span>
+        <br />
+        <span id="feels-like"> Feels like 10°</span>
+      </small>
+    </section>
+
+    <footer>5 Day Weather Forecast:</footer>
+
+    <div class="row">
+      <div class="col">
+        Sun <br />
+        Oct 11 <br />
+        <img src="images/sun-rain.png" class="rounded-circle">
+        <p class="weather-forecast">15°</p>
+        </i>
+        <small> Feels 15°</small>
+      </div>
+
+      <div class="col">
+        Mon <br />
+        Oct 12 <br />
+        <img src="images/partly-cloudy.png" class="rounded-circle">
+        <p class="weather-forecast">11°</p>
+        </i>
+        <small> Feels 13°</small>
+      </div>
+
+      <div class="col">
+        Tue <br />
+        Oct 13 <br />
+        <img src="images/raining.png" class="rounded-circle">
+        <p class="weather-forecast">5°</p>
+        </i>
+        <small> Feels 0°</small>
+      </div>
+
+      <div class="col">
+        Wed <br />
+        Oct 14 <br />
+        <img src="images/thunderstorm.png" class="rounded-circle">
+        <p class="weather-forecast">7°</p>
+        </i>
+        <small> Feels 7°</small>
+      </div>
+
+      <div class="col">
+        Thu <br />
+        Oct 15 <br />
+        <img src="images/partly-cloudy.png" class="rounded-circle">
+        <p class="weather-forecast">15°</p>
+        </i>
+        <small> Feels 13°</small>
+      </div>
+    </div>
+
+    <script src="src/index.js"></script>
+  </div>
+</body>
+
 </html>
