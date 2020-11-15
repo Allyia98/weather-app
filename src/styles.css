@@ -7,10 +7,20 @@ button {
 
 footer {
 }
-
+li {
+  list-style: none;
+}
 h1 {
   font-size: 50px;
   padding: 0 auto;
+}
+
+.weather-app {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 2px solid #babab9;
+  border-radius: 20px;
 }
 
 .forecast {
@@ -19,11 +29,7 @@ h1 {
 }
 
 .high-low {
-  display: block;
-  margin: 0 auto;
-  position: absolute;
-  top: 200px;
-  padding: 0px 100px 150px;
+  padding: 170px 0px 0px 50px;
 }
 
 .current-weather {
@@ -41,8 +47,6 @@ h1 {
 }
 
 .temperature {
-  display: block;
-  margin: 0 auto;
   text-align: center;
 }
 
