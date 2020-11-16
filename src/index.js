@@ -98,25 +98,25 @@ function getCurrentPosition() {
 let button = document.querySelector("button");
 button.addEventListener("click", getCurrentPosition);
 
-// //change from celcius to farhenheit using links
-// function changeTemp(event) {
-//   event.preventDefault();
+// change from celcius to farhenheit using links
+function changeTemp(event) {
+   event.preventDefault();
 
-//   let temp = document.querySelector("#curr-temp");
-//   let temperature = Math.round(12 * (9 / 5) + 32);
-//   temp.innerHTML = `${temperature}°F`;
-// }
+   let temp = document.querySelector("#curr-temp");
+   let temperature = Math.round(12 * (9 / 5) + 32);
+   temp.innerHTML = `${temperature}°`;
+ }
 
-// function changeTempBack(event) {
-//   event.preventDefault();
+ function changeTempBack(event) {
+   event.preventDefault();
 
-//   let celciusTemp = document.querySelector("#curr-temp");
-//   let temperature = 12;
-//   celciusTemp.innerHTML = `${temperature}°C`;
-// }
+   let celciusTemp = document.querySelector("#curr-temp");
+   let temperature = 12;
+   celciusTemp.innerHTML = `${temperature}°`;
+ }
 
-// let fahLink = document.querySelector("#fahrenheit-link");
-// fahLink.addEventListener("click", changeTemp);
+ let fahLink = document.querySelector("#fahrenheit-link");
+ fahLink.addEventListener("click", changeTemp);
 
-// let celLink = document.querySelector("#celcius-link");
-// celLink.addEventListener("click", changeTempBack);
+ let celLink = document.querySelector("#celcius-link");
+ celLink.addEventListener("click", changeTempBack);

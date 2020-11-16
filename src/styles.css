@@ -14,7 +14,10 @@ h1 {
   font-size: 50px;
   padding: 0 auto;
 }
-
+.weather-app-wrapper {
+  max-width: 700px;
+  margin: 30px auto;
+}
 .weather-app {
   max-width: 700px;
   margin: 30px auto;
@@ -40,7 +43,9 @@ h1 {
   max-width: 600px;
   opacity: 0.6;
 }
-
+.additional-info {
+  padding: 170px 0px 0px 50px;
+}
 .header {
   text-align: center;
   padding: 50px 0px 0px 0px;
