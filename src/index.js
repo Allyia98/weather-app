@@ -1,7 +1,59 @@
-//displaying current date and time
-let now = new Date();
+// //displaying current date and time
+// let now = new Date();
 
-let day = [
+// let day = [
+//   "Sunday",
+//   "Monday",
+//   "Tuesday",
+//   "Wednesday",
+//   "Thursday",
+//   "Friday",
+//   "Saturday",
+// ];
+// let currDay = day[now.getDay()];
+
+// let months = [
+//   "January",
+//   "February",
+//   "March",
+//   "April",
+//   "May",
+//   "June",
+//   "July",
+//   "August",
+//   "September",
+//   "October",
+//   "November",
+//   "December",
+// ];
+// let currMonth = months[now.getMonth()];
+
+// let date = now.getDate();
+// let hour = now.getHours();
+// if (hour < 10) {
+//   hour = `0${hour}`;
+// }
+// let minutes = now.getMinutes();
+// if (minutes < 10) {
+//   minutes = `0${minutes}`;
+// }
+// let formattedDate = `${currDay}, ${currMonth} ${date} <br /> ${hour}:${minutes}`;
+
+// let todayDate = document.querySelector("#date");
+// todayDate.innerHTML = formattedDate;
+
+//calculate the date
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${minutes}`
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`
+  }
+  let days = [
   "Sunday",
   "Monday",
   "Tuesday",
@@ -10,37 +62,9 @@ let day = [
   "Friday",
   "Saturday",
 ];
-let currDay = day[now.getDay()];
-
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-let currMonth = months[now.getMonth()];
-
-let date = now.getDate();
-let hour = now.getHours();
-if (hour < 10) {
-  hour = `0${hour}`;
+let day = days[date.getDay()];
+  return `${day}, ${hours}:${minutes}`;
 }
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-let formattedDate = `${currDay}, ${currMonth} ${date} <br /> ${hour}:${minutes}`;
-
-let todayDate = document.querySelector("#date");
-todayDate.innerHTML = formattedDate;
 
 //Search Engine
 function displayCity(event) {
@@ -75,6 +99,7 @@ function currentTemp(response) {
   let humidity = document.querySelector("#humidity");
   let speed = Math.round(response.data.wind.speed);
   let windElement = document.querySelector("wind");
+  let dateElement = document.querySelector("#date");
 
   //changing HTML
   currTemp.innerHTML = `${temp}°C`;
@@ -85,6 +110,7 @@ function currentTemp(response) {
   currCity.innerHTML = response.data.name;
   humidity.innerHTML = "Humidity: " + response.data.main.humidity + "%";
   wind.innerHTML = `Wind: ${speed}km/h`;
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 //current location button
