@@ -9,6 +9,7 @@ footer {
 }
 li {
   list-style: none;
+  font-size: 12px;
 }
 h1 {
   font-size: 50px;
@@ -44,6 +45,8 @@ h1 {
   opacity: 0.6;
 }
 .additional-info {
+  display: block;
+  margin: 0 auto;
   padding: 170px 0px 0px 50px;
 }
 .header {

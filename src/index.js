@@ -72,6 +72,9 @@ function currentTemp(response) {
   let low = Math.round(response.data.main.temp_min);
   let lowTemp = document.querySelector("#low-temp");
   let currCity = document.querySelector("#current-city");
+  let humidity = document.querySelector("#humidity");
+  let speed = Math.round(response.data.wind.speed);
+  let windElement = document.querySelector("wind");
 
   //changing HTML
   currTemp.innerHTML = `${temp}°C`;
@@ -80,6 +83,8 @@ function currentTemp(response) {
   highTemp.innerHTML = `High: ${high}°`;
   lowTemp.innerHTML = `Low: ${low}°`;
   currCity.innerHTML = response.data.name;
+  humidity.innerHTML = "Humidity: " + response.data.main.humidity + "%";
+  wind.innerHTML = `Wind: ${speed}km/h`;
 }
 
 //current location button
