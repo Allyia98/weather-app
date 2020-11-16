@@ -16,7 +16,7 @@ h1 {
   padding: 0 auto;
 }
 .weather-app-wrapper {
-  max-width: 700px;
+  max-width: 600px;
   margin: 30px auto;
 }
 .weather-app {
@@ -47,7 +47,7 @@ h1 {
 .additional-info {
   display: block;
   margin: 0 auto;
-  padding: 170px 0px 0px 50px;
+  padding: 65px 0px 0px 50px;
 }
 .header {
   text-align: center;
@@ -73,6 +73,10 @@ h1 {
 
 .rounded-circle {
   max-width: 50px;
+}
+
+#icon {
+  max-width: 100px;
 }
 
 .date {
