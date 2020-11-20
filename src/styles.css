@@ -21,14 +21,25 @@ h1 {
 }
 .weather-app {
   max-width: 700px;
-  margin: 30px auto;
+  margin: 30px auto 5px;
   padding: 20px;
   border: 2px solid #babab9;
   border-radius: 20px;
 }
+.units {
+  float: right;
+  margin: 0;
+}
 
+.btn-warning {
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: white;
+}
 .forecast {
-  font-family: "Roboto Slab", serif;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
   padding: 100px 10px 10px;
 }
 
@@ -74,11 +85,15 @@ h1 {
 .rounded-circle {
   max-width: 50px;
 }
-
+#curr-button {
+  margin-top: 5px;
+}
 #icon {
   max-width: 100px;
 }
 
 .date {
-  font-family: "Roboto Slab", serif;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
 }
