@@ -37,7 +37,8 @@
       <div class ="col-3"> 
       <input type="submit" 
       value="Search" 
-      class="btn btn-primary w-100"/>
+      class="btn btn-primary w-100"
+      id = "search-btn"/>
       </div>
       
      </div>
@@ -57,7 +58,7 @@
 
     <div class ="col-4">
       <section class="header">
-        <h2 id="current-city">Toronto</h2>
+        <h1 id="current-city">Toronto</h1>
         <p id="updated-date">Last updated: <br /> <span id ="date"></span></p>
       </section>
 
@@ -78,15 +79,18 @@
       </ul>
     </div>
  </div>
- <br />
+
 
 <!-- forcast-->
+<footer>
 <h5>Forecast:</h5>
-<div class = "row weather-forecast" id="forecast">
-  
-</div>
+<section class = "hourly-forecast">
 
-  </div> <!-- end of weather-app div-->
+<div class = "row weather-forecast" id="forecast"></div>
+</section>
+</footer>
+
+</div> <!-- end of weather-app div-->
 
   <small class="source-code">
     <a href="https://github.com/Allyia98/weather-app" target="_blank"> Open Source Code</a> by Allyia Rahim

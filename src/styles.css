@@ -1,14 +1,27 @@
-button {
-  padding: 0;
+body {
+  font-family: "Varela Round", sans-serif;
+  line-height: 1.5;
 }
+
+h1 {
+  font-weight: 100;
+  font-size: 50px;
+  padding: 0 auto;
+}
+
 li {
   list-style: none;
   font-size: 12px;
 }
-h1 {
-  font-size: 50px;
-  padding: 0 auto;
+
+footer {
+  padding: 80px 10px 10px;
 }
+
+h5 {
+  font-weight: 100;
+}
+
 .weather-app-wrapper {
   max-width: 600px;
   margin: 30px auto;
@@ -19,52 +32,35 @@ h1 {
   padding: 20px;
   border: 2px solid #babab9;
   border-radius: 20px;
+  background-image: linear-gradient(to top, #ace0f9 0%, #fff1eb 100%);
 }
+
 .units {
   float: right;
   margin: 0;
 }
-.celActive:hover {
+.celActive:hover,
+.fahActive:hover,
+#curr-location:hover {
   text-decoration: none;
 }
 
-.fahActive:hover {
-  text-decoration: none;
-}
-
-.col-7 {
+.col-9 {
   padding: 0;
-}
-
-.btn-warning {
-  font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue",
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  color: white;
-}
-.forecast {
-  font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue",
-    Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
-  padding: 100px 10px 10px;
 }
 
 .high-low {
   padding: 170px 0px 0px 50px;
+  font-size: 16px;
 }
 
-.current-weather {
-  position: fixed;
-  top: 0px;
-  right: 0px;
-  width: 400px;
-  max-width: 600px;
-  opacity: 0.6;
-}
 .additional-info {
   display: block;
   margin: 0 auto;
   padding: 65px 0px 0px 50px;
+  font-size: 16px;
 }
+
 .header {
   text-align: center;
   padding: 50px 0px 0px 0px;
@@ -74,32 +70,45 @@ h1 {
   text-align: center;
 }
 
-.col {
-  text-align: center;
-}
-
 .weather-forecast {
   font-size: 15px;
   font-weight: bold;
   margin: 0 auto;
 }
 
+.hourly-forecast {
+  margin: 0px 10px;
+  padding: 20px 10px;
+  border: thick double #f3efee;
+  border-radius: 15px;
+  border-width: 4px;
+  text-align: center;
+}
+
 .rounded-circle {
   max-width: 50px;
+}
+
+#city-input {
+  border-radius: 15px;
+}
+
+#search-btn {
+  border-radius: 15px;
+  background-color: #3bafd6;
+  border: 0.5px solid white;
+  transition: all 200ms ease-in-out;
+}
+
+#search-btn:hover {
+  opacity: 0.7;
 }
 #curr-button {
   margin-top: 5px;
 }
 #icon {
   max-width: 100px;
-}
-
-.date {
-  font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue",
-    Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
-}
-
-#curr-location:hover {
-  text-decoration: none;
+  border: solid #babab9;
+  border-radius: 50px;
+  border-width: 1px;
 }
