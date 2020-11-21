@@ -35,11 +35,11 @@ function formatHours(timestamp){
 //calls the API
 function search(city){
   let apiKey = "5dfec6742de51df1fd7da24d6310c8b4";
-  let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(currentTemp);
 
   //API url for 3hr forecast
-  apiUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl). then(displayForecast);
 }
 
@@ -87,7 +87,7 @@ function currentTemp(response) {
   wind.innerHTML = `Wind: ${speed}km/h`;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute("src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
@@ -104,7 +104,7 @@ function displayForecast(response){
   <div class="col">
         ${formatHours(forecast.dt * 1000)} <br/>
         <img 
-        src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
+        src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
         class = "rounded-circle">
         <div class="weather-forecast">
         </i>
