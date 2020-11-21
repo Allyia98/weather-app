@@ -2,14 +2,6 @@
 function formatDate(timestamp) {
   let date = new Date(timestamp);
 
-  let hours = date.getHours();
-  if (hours < 10) {
-    hours = `0${minutes}`
-  }
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`
-  }
   let days = [
   "Sunday",
   "Monday",
@@ -20,7 +12,24 @@ function formatDate(timestamp) {
   "Saturday",
 ];
 let day = days[date.getDay()];
-  return `${day}, ${hours}:${minutes}`;
+  return `${day}, ${formatHours(timestamp)}`;
+}
+
+//receives timestamp and return hours for the corcast
+function formatHours(timestamp){
+  let date = new Date(timestamp);
+
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`
+  }
+
+  return `${hours}:${minutes}`;
+
 }
 
 //calls the API
@@ -28,6 +37,10 @@ function search(city){
   let apiKey = "5dfec6742de51df1fd7da24d6310c8b4";
   let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(currentTemp);
+
+  //API url for 3hr forecast
+  apiUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl). then(displayForecast);
 }
 
 //Search Engine
@@ -79,6 +92,32 @@ function currentTemp(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
+//forecast 
+function displayForecast(response){
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for(let index=0; index< 5; index++){  
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
+  <div class="col">
+        ${formatHours(forecast.dt * 1000)} <br/>
+        <img 
+        src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
+        class = "rounded-circle">
+        <div class="weather-forecast">
+        </i>
+        ${Math.round(forecast.main.temp)}° 
+        <br />
+        <small> 
+        Feels ${Math.round(forecast.main.feels_like)}°
+        </small>
+        </div>
+      </div>`;
+    }
+
+}
 
 //current location button
  function retrievePosition(position) {
