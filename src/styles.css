@@ -1,11 +1,5 @@
-body {
-}
-form {
-}
 button {
-}
-
-footer {
+  padding: 0;
 }
 li {
   list-style: none;
@@ -29,6 +23,17 @@ h1 {
 .units {
   float: right;
   margin: 0;
+}
+.celActive:hover {
+  text-decoration: none;
+}
+
+.fahActive:hover {
+  text-decoration: none;
+}
+
+.col-7 {
+  padding: 0;
 }
 
 .btn-warning {
@@ -69,9 +74,6 @@ h1 {
   text-align: center;
 }
 
-.row {
-}
-
 .col {
   text-align: center;
 }
@@ -96,4 +98,8 @@ h1 {
   font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue",
     Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+#curr-location:hover {
+  text-decoration: none;
 }

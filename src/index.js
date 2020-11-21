@@ -44,7 +44,8 @@ form.addEventListener("submit", displayCity);
 //displays temperature in city and description
 function currentTemp(response) {
   //initialization
-  let temp = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+  let temp = Math.round(celsiusTemperature);
   let currTemp = document.querySelector("#curr-temp");
   let descriptionElement = document.querySelector("#temp-description");
   let feelsElement = Math.round(response.data.main.feels_like);
@@ -59,6 +60,8 @@ function currentTemp(response) {
   let windElement = document.querySelector("wind");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
+
+  
 
   //changing HTML
   currTemp.innerHTML = `${temp}°C`;
@@ -76,43 +79,47 @@ function currentTemp(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-//default
-search("Toronto");
+
 //current location button
-// function retrievePosition(position) {
-//   let key = "5dfec6742de51df1fd7da24d6310c8b4";
-//   let lat = position.coords.latitude;
-//   let lon = position.coords.longitude;
-//   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${key}`;
-//   axios.get(url).then(currentTemp);
-// }
+ function retrievePosition(position) {
+   let key = "5dfec6742de51df1fd7da24d6310c8b4";
+   let lat = position.coords.latitude;
+   let lon = position.coords.longitude;
+   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${key}`;
+   axios.get(url).then(currentTemp);
+ }
 
-// function getCurrentPosition() {
-//   navigator.geolocation.getCurrentPosition(retrievePosition);
-// }
+ function getCurrentPosition() {
+   navigator.geolocation.getCurrentPosition(retrievePosition);
+ }
 
-// let button = document.querySelector("button");
-// button.addEventListener("click", getCurrentPosition);
+ let button = document.querySelector("#curr-location");
+ button.addEventListener("click", getCurrentPosition);
 
 // change from celcius to farhenheit using links
-// function changeTemp(event) {
-//    event.preventDefault();
+ function changeTemp(event) {
+    event.preventDefault();
+    
+    let fahrenheitTemperature = Math.round(celsiusTemperature * (9 / 5) + 32);
+    let temp = document.querySelector("#curr-temp"); 
+    temp.innerHTML = `${fahrenheitTemperature}°F`;
+  }
 
-//    let temp = document.querySelector("#curr-temp");
-//    let temperature = Math.round(12 * (9 / 5) + 32);
-//    temp.innerHTML = `${temperature}°`;
-//  }
+  
+  function changeTempBack(event) {
+    event.preventDefault();
 
-//  function changeTempBack(event) {
-//    event.preventDefault();
+    let celciusTemp = document.querySelector("#curr-temp");
+    celciusTemp.innerHTML = Math.round(celsiusTemperature)+"°C";
+  }
 
-//    let celciusTemp = document.querySelector("#curr-temp");
-//    let temperature = 12;
-//    celciusTemp.innerHTML = `${temperature}°`;
-//  }
+  let celsiusTemperature = null;
 
-//  let fahLink = document.querySelector("#fahrenheit-link");
-//  fahLink.addEventListener("click", changeTemp);
+  let fahLink = document.querySelector("#fahrenheit-link");
+  fahLink.addEventListener("click", changeTemp);
 
-//  let celLink = document.querySelector("#celcius-link");
-//  celLink.addEventListener("click", changeTempBack);
+  let celLink = document.querySelector("#celcius-link");
+  celLink.addEventListener("click", changeTempBack);
+
+//default
+search("Toronto");

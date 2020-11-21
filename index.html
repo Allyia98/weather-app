@@ -17,8 +17,9 @@
     <div class="weather-app">
 
       <p class="units">
-        <a href="#" id="celcius-link"> °C </a>
-        <a href="#" id="fahrenheit-link"> °F </a>
+        <a href="#" id="celcius-link" class="celActive"> °C </a> |
+        <a href="#" id="fahrenheit-link" class="fahActive"> °F </a>
+        <a href="#" id="curr-location" class=""> 📍 </a>
       </p>
 
     <!-- Search Row-->
@@ -37,13 +38,7 @@
       <input type="submit" 
       value="Search" 
       class="btn btn-primary w-100"/>
-      </div> 
-
-     <div class="col-12"> 
-     <button type="button" class="btn btn-outline-info btn-sm" id="curr-button">
-       Current Location</button>
       </div>
-
       
      </div>
    </form>
@@ -54,8 +49,8 @@
     <div class ="col-4">
       <ul class="high-low">
         
-        <li id="high-temp"> High: 15°</li>
-        <li id="low-temp"> Low: 10°</li>
+        <li id="high-temp"> </li>
+        <li id="low-temp"> </li>
         
       </ul>
     </div>
@@ -67,7 +62,7 @@
       </section>
 
       <section class="temperature">
-        <h1 id="curr-temp"> 12°</h1>
+        <h1 id="curr-temp"> </h1>
         <small>
           <span id="feels-like"> Feels like 10°</span>
         </small>
