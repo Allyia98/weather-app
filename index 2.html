@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Final SheCodes Project</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <link rel="stylesheet" href="src/styles.css" />
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://kit.fontawesome.com/422c3c74e2.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="weather-app-wrapper">
+    <div class="weather-app">
+
+      <p class="units">
+        <a href="#" id="celcius-link" class="celActive"> °C </a> |
+        <a href="#" id="fahrenheit-link" class="fahActive"> °F </a>
+        <a href="#" id="curr-location" class=""> 📍 </a>
+      </p>
+
+    <!-- Search Row-->
+    <form id="search-form">
+      <div class="row"> 
+
+      <div class="col-9">
+      <input type="search" 
+      placeholder="Enter your city" 
+      class="form-control"
+      autocomplete="off" 
+      id="city-input" />
+      </div>
+
+      <div class ="col-3"> 
+      <input type="submit" 
+      value="Search" 
+      class="btn btn-primary w-100"/>
+      </div>
+      
+     </div>
+   </form>
+
+
+<!-- Temp Information-->    
+<div class="row">
+    <div class ="col-4">
+      <ul class="high-low">
+        
+        <li id="high-temp"> </li>
+        <li id="low-temp"> </li>
+        
+      </ul>
+    </div>
+
+    <div class ="col-4">
+      <section class="header">
+        <h2 id="current-city">Toronto</h2>
+        <p id="updated-date">Last updated: <br /> <span id ="date"></span></p>
+      </section>
+
+      <section class="temperature">
+        <h1 id="curr-temp"> </h1>
+        <small>
+          <span id="feels-like"> Feels like 10°</span>
+        </small>
+      </section>
+    </div>
+
+    <div class="col-4">
+      <ul class="additional-info">
+      <li> <img src="" alt="" id="icon"> </li>
+      <li id="temp-description"></li>
+      <li id = "humidity"> </li>
+      <li id="wind"> </li>
+      </ul>
+    </div>
+ </div>
+
+<!-- forcast-->
+    <div class="forecast" id="forecast">
+      <h5> 5 Day Weather Forecast</h3>
+
+
+    <div class="row">
+    
+
+      <div class="col">
+        Mon <br />
+        <img src="images/partly-cloudy.png" alt="" class="rounded-circle">
+        <p class="weather-forecast">11°</p>
+        </i>
+        <small> Feels 13°</small>
+      </div>
+
+      <div class="col">
+        Tue <br />
+        <img src="" alt="" class="rounded-circle">
+        <p class="weather-forecast">5°</p>
+        </i>
+        <small> Feels 0°</small>
+      </div>
+
+      <div class="col">
+        Wed <br />
+        <img src="images/thunderstorm.png" alt="" class="rounded-circle">
+        <p class="weather-forecast">7°</p>
+        </i>
+        <small> Feels 7°</small>
+      </div>
+
+      <div class="col">
+        Thu <br />
+        <img src="images/partly-cloudy.png" alt="" class="rounded-circle">
+        <p class="weather-forecast">15°</p>
+        </i>
+        <small> Feels 13°</small>
+      </div>
+    </div>
+  </div>
+</div>
+  <small class="source-code">
+    <a href="https://github.com/Allyia98/weather-app" target="_blank"> Open Source Code</a> by Allyia Rahim
+  </small>
+  </div>
+  
+ 
+  <script src="src/index.js"></script>
+  </div>
+</body>
+
+</html>
